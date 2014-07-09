@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-04/hyper-schema",
+  "title": "App Resource",
+  "description": "FIXME",
+  "id": "schemata/app_resource",
+  "$ref": "/schemata/resource",
+  "type": ["object"],
+  "links": [
+    {
+      "title": "List",
+      "description": "FIXME",
+      "method": "GET",
+      "href": "/apps/{(%2Fschemata%2Fapp%23%2Fdefinitions%2Fidentity)}/resources",
+      "rel": "instances"
+    }
+  ]
+}

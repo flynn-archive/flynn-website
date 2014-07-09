@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-04/hyper-schema",
+  "title": "TYPE.Route",
+  "description": "FIXME",
+  "id": "schemata/route",
+  "definitions": {
+    "id": {
+      "description": "unique identifier of route",
+      "example": "01234567-89ab-cdef-0123-456789abcdef",
+      "format": "uuid",
+      "type": [
+        "string"
+      ]
+    },
+    "identity": {
+      "$ref": "/schemata/route#/definitions/id"
+    },
+    "type": {
+      "description": "unique identifier of app",
+      "example": "01234567-89ab-cdef-0123-456789abcdef",
+      "format": "uuid",
+      "type": [
+        "string"
+      ]
+    }
+  },
+  "properties": {},
+  "type": ["object"],
+  "links": []
+}
