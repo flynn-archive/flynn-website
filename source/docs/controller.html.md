@@ -54,7 +54,7 @@ GET /apps/{app_id}/formations/{release_id}
 
 
 #### Curl Example
-```term
+```bash
 $ curl -n -X GET https://flynn.dev/apps/$APP_ID/formations/$RELEASE_ID
 ```
 
@@ -63,7 +63,7 @@ $ curl -n -X GET https://flynn.dev/apps/$APP_ID/formations/$RELEASE_ID
 ```
 HTTP/1.1 200 OK
 ```
-```json
+```
 {
   "app": "01234567-89ab-cdef-0123-456789abcdef",
   "release": "01234567-89ab-cdef-0123-456789abcdef",
@@ -86,7 +86,7 @@ PUT /apps/{app_id}/formations/{release_id}
 
 
 #### Curl Example
-```term
+```bash
 $ curl -n -X PUT https://flynn.dev/apps/$APP_ID/formations/$RELEASE_ID
 ```
 
@@ -95,7 +95,7 @@ $ curl -n -X PUT https://flynn.dev/apps/$APP_ID/formations/$RELEASE_ID
 ```
 HTTP/1.1 200 OK
 ```
-```json
+```
 {
   "app": "01234567-89ab-cdef-0123-456789abcdef",
   "release": "01234567-89ab-cdef-0123-456789abcdef",
@@ -118,7 +118,7 @@ DELETE /apps/{app_id}/formations/{release_id}
 
 
 #### Curl Example
-```term
+```bash
 $ curl -n -X DELETE https://flynn.dev/apps/$APP_ID/formations/$RELEASE_ID
 ```
 
@@ -127,7 +127,7 @@ $ curl -n -X DELETE https://flynn.dev/apps/$APP_ID/formations/$RELEASE_ID
 ```
 HTTP/1.1 200 OK
 ```
-```json
+```
 {
   "app": "01234567-89ab-cdef-0123-456789abcdef",
   "release": "01234567-89ab-cdef-0123-456789abcdef",
@@ -150,7 +150,7 @@ GET /apps/{app_id}/formations
 
 
 #### Curl Example
-```term
+```bash
 $ curl -n -X GET https://flynn.dev/apps/$APP_ID/formations
 ```
 
@@ -159,7 +159,7 @@ $ curl -n -X GET https://flynn.dev/apps/$APP_ID/formations
 ```
 HTTP/1.1 200 OK
 ```
-```json
+```
 [
   {
     "app": "01234567-89ab-cdef-0123-456789abcdef",
@@ -246,7 +246,7 @@ POST /apps/{app_id}/jobs
 
 
 #### Curl Example
-```term
+```bash
 $ curl -n -X POST https://flynn.dev/apps/$APP_ID/jobs
 ```
 
@@ -255,7 +255,7 @@ $ curl -n -X POST https://flynn.dev/apps/$APP_ID/jobs
 ```
 HTTP/1.1 201 Created
 ```
-```json
+```
 {
   "id": "01234567-89ab-cdef-0123-456789abcdef",
   "app": "01234567-89ab-cdef-0123-456789abcdef",
@@ -280,7 +280,7 @@ GET /apps/{app_id}/jobs
 
 
 #### Curl Example
-```term
+```bash
 $ curl -n -X GET https://flynn.dev/apps/$APP_ID/jobs
 ```
 
@@ -289,7 +289,7 @@ $ curl -n -X GET https://flynn.dev/apps/$APP_ID/jobs
 ```
 HTTP/1.1 200 OK
 ```
-```json
+```
 [
   {
     "id": "01234567-89ab-cdef-0123-456789abcdef",
@@ -316,7 +316,7 @@ PUT /apps/{app_id}/jobs/{job_id}
 
 
 #### Curl Example
-```term
+```bash
 $ curl -n -X PUT https://flynn.dev/apps/$APP_ID/jobs/$JOB_ID
 ```
 
@@ -325,7 +325,7 @@ $ curl -n -X PUT https://flynn.dev/apps/$APP_ID/jobs/$JOB_ID
 ```
 HTTP/1.1 200 OK
 ```
-```json
+```
 {
   "id": "01234567-89ab-cdef-0123-456789abcdef",
   "app": "01234567-89ab-cdef-0123-456789abcdef",
@@ -350,7 +350,7 @@ DELETE /apps/{app_id}/jobs/{job_id}
 
 
 #### Curl Example
-```term
+```bash
 $ curl -n -X DELETE https://flynn.dev/apps/$APP_ID/jobs/$JOB_ID
 ```
 
@@ -359,7 +359,7 @@ $ curl -n -X DELETE https://flynn.dev/apps/$APP_ID/jobs/$JOB_ID
 ```
 HTTP/1.1 200 OK
 ```
-```json
+```
 {
   "id": "01234567-89ab-cdef-0123-456789abcdef",
   "app": "01234567-89ab-cdef-0123-456789abcdef",
@@ -384,7 +384,7 @@ GET /apps/{app_id}/jobs/{job_id}/log
 
 
 #### Curl Example
-```term
+```bash
 $ curl -n -X GET https://flynn.dev/apps/$APP_ID/jobs/$JOB_ID/log
 ```
 
@@ -393,7 +393,7 @@ $ curl -n -X GET https://flynn.dev/apps/$APP_ID/jobs/$JOB_ID/log
 ```
 HTTP/1.1 200 OK
 ```
-```json
+```
 {
   "id": "01234567-89ab-cdef-0123-456789abcdef",
   "app": "01234567-89ab-cdef-0123-456789abcdef",
@@ -462,7 +462,7 @@ GET /apps/{app_id}/release
 
 
 #### Curl Example
-```term
+```bash
 $ curl -n -X GET https://flynn.dev/apps/$APP_ID/release
 ```
 
@@ -471,7 +471,7 @@ $ curl -n -X GET https://flynn.dev/apps/$APP_ID/release
 ```
 HTTP/1.1 200 OK
 ```
-```json
+```
 [
   {
     "id": "01234567-89ab-cdef-0123-456789abcdef",
@@ -500,7 +500,7 @@ PUT /apps/{app_id}/release
 
 
 #### Curl Example
-```term
+```bash
 $ curl -n -X PUT https://flynn.dev/apps/$APP_ID/release
 ```
 
@@ -509,7 +509,7 @@ $ curl -n -X PUT https://flynn.dev/apps/$APP_ID/release
 ```
 HTTP/1.1 200 OK
 ```
-```json
+```
 {
   "id": "01234567-89ab-cdef-0123-456789abcdef",
   "created_at": "2012-01-01T12:00:00Z",
@@ -586,7 +586,7 @@ GET /apps/{app_id}/resources
 
 
 #### Curl Example
-```term
+```bash
 $ curl -n -X GET https://flynn.dev/apps/$APP_ID/resources
 ```
 
@@ -595,7 +595,7 @@ $ curl -n -X GET https://flynn.dev/apps/$APP_ID/resources
 ```
 HTTP/1.1 200 OK
 ```
-```json
+```
 [
   {
     "id": "01234567-89ab-cdef-0123-456789abcdef",
@@ -637,7 +637,7 @@ POST /apps/{app_id}/routes
 
 
 #### Curl Example
-```term
+```bash
 $ curl -n -X POST https://flynn.dev/apps/$APP_ID/routes
 ```
 
@@ -646,7 +646,7 @@ $ curl -n -X POST https://flynn.dev/apps/$APP_ID/routes
 ```
 HTTP/1.1 201 Created
 ```
-```json
+```
 {
 }
 ```
@@ -660,7 +660,7 @@ GET /apps/{app_id}/routes
 
 
 #### Curl Example
-```term
+```bash
 $ curl -n -X GET https://flynn.dev/apps/$APP_ID/routes
 ```
 
@@ -669,7 +669,7 @@ $ curl -n -X GET https://flynn.dev/apps/$APP_ID/routes
 ```
 HTTP/1.1 200 OK
 ```
-```json
+```
 [
   {
   }
@@ -685,7 +685,7 @@ GET /apps/{app_id}/routes/{route_type}/{route_id}
 
 
 #### Curl Example
-```term
+```bash
 $ curl -n -X GET https://flynn.dev/apps/$APP_ID/routes/$ROUTE_TYPE/$ROUTE_ID
 ```
 
@@ -694,7 +694,7 @@ $ curl -n -X GET https://flynn.dev/apps/$APP_ID/routes/$ROUTE_TYPE/$ROUTE_ID
 ```
 HTTP/1.1 200 OK
 ```
-```json
+```
 {
 }
 ```
@@ -708,7 +708,7 @@ DELETE /apps/{app_id}/routes/{route_type}/{route_id}
 
 
 #### Curl Example
-```term
+```bash
 $ curl -n -X DELETE https://flynn.dev/apps/$APP_ID/routes/$ROUTE_TYPE/$ROUTE_ID
 ```
 
@@ -717,7 +717,7 @@ $ curl -n -X DELETE https://flynn.dev/apps/$APP_ID/routes/$ROUTE_TYPE/$ROUTE_ID
 ```
 HTTP/1.1 200 OK
 ```
-```json
+```
 {
 }
 ```
@@ -781,7 +781,7 @@ POST /providers/{provider_id}/resources
 
 
 #### Curl Example
-```term
+```bash
 $ curl -n -X POST https://flynn.dev/providers/$PROVIDER_ID/resources
 ```
 
@@ -790,7 +790,7 @@ $ curl -n -X POST https://flynn.dev/providers/$PROVIDER_ID/resources
 ```
 HTTP/1.1 201 Created
 ```
-```json
+```
 {
   "id": "01234567-89ab-cdef-0123-456789abcdef",
   "provider_id": "01234567-89ab-cdef-0123-456789abcdef",
@@ -816,7 +816,7 @@ GET /providers/{provider_id}/resources/{resource_id}
 
 
 #### Curl Example
-```term
+```bash
 $ curl -n -X GET https://flynn.dev/providers/$PROVIDER_ID/resources/$RESOURCE_ID
 ```
 
@@ -825,7 +825,7 @@ $ curl -n -X GET https://flynn.dev/providers/$PROVIDER_ID/resources/$RESOURCE_ID
 ```
 HTTP/1.1 200 OK
 ```
-```json
+```
 {
   "id": "01234567-89ab-cdef-0123-456789abcdef",
   "provider_id": "01234567-89ab-cdef-0123-456789abcdef",
@@ -851,7 +851,7 @@ GET /providers/{provider_id}/resources
 
 
 #### Curl Example
-```term
+```bash
 $ curl -n -X GET https://flynn.dev/providers/$PROVIDER_ID/resources
 ```
 
@@ -860,7 +860,7 @@ $ curl -n -X GET https://flynn.dev/providers/$PROVIDER_ID/resources
 ```
 HTTP/1.1 200 OK
 ```
-```json
+```
 [
   {
     "id": "01234567-89ab-cdef-0123-456789abcdef",
@@ -888,7 +888,7 @@ PUT /providers/{provider_id}/resources
 
 
 #### Curl Example
-```term
+```bash
 $ curl -n -X PUT https://flynn.dev/providers/$PROVIDER_ID/resources
 ```
 
@@ -897,7 +897,7 @@ $ curl -n -X PUT https://flynn.dev/providers/$PROVIDER_ID/resources
 ```
 HTTP/1.1 200 OK
 ```
-```json
+```
 {
   "id": "01234567-89ab-cdef-0123-456789abcdef",
   "provider_id": "01234567-89ab-cdef-0123-456789abcdef",
@@ -913,6 +913,7 @@ HTTP/1.1 200 OK
   ]
 }
 ```
+
 
 
 

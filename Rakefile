@@ -1,5 +1,3 @@
-require 'fileutils'
-
 namespace :assets do
   task :precompile do
     sh 'bundle exec middleman build'
@@ -7,6 +5,9 @@ namespace :assets do
 end
 
 task :schema do
+  require 'fileutils'
+  require "erubis"
+
   FileUtils::Verbose.rm_rf(["schema/controller.json",
                             "schema/controller.md"])
 
@@ -14,16 +15,14 @@ task :schema do
   system(%Q(prmd verify "schema/controller.json"))
   system(%Q(prmd doc "schema/controller.json" > "schema/controller.md"))
 
+  renderer = Erubis::Eruby.new(File.read("schema/template.md.erb"))
   File.open("source/docs/controller.html.md", "w") do |f|
-    f.puts("---\n"+
-           "title: Docs - Flynn\n"+
-           "layout: docs\n"+
-           "---\n")
-
-    File.open("schema/controller.md", "r") do |fmd|
-      fmd.each_line do |line|
-        f.write(line)
-      end
-    end
+    content = File.read("schema/controller.md")
+    # pygments does not have an alias for term, so substituting bash for term
+    # solves this issue
+    content.gsub!("```term", "```bash")
+    # pygments defaults to json, and strangely, doesn't have an alias for it
+    content.gsub!("```json", "```")
+    f.write(renderer.result(content: content))
   end
 end
