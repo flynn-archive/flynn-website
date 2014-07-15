@@ -30,6 +30,13 @@
       "type": [
         "array"
       ]
+    },
+    "config": {
+      "description": "raw json message",
+      "example": "{ \"stuff\": \"more stuff\" }",
+      "type": [
+        "string"
+      ]
     }
   },
   "properties": {},
