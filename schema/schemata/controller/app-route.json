@@ -13,11 +13,7 @@
       "href": "/apps/{(%2Fschemata%2Fapp%23%2Fdefinitions%2Fidentity)}/routes",
       "rel": "create",
       "schema": {
-        "properties": {
-        },
-        "type": [
-          "object"
-        ]
+        "$ref": "/schemata/route"
       }
     },
     {

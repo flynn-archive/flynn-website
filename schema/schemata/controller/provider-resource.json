@@ -15,11 +15,7 @@
       "method": "POST",
       "rel": "create",
       "schema": {
-        "properties": {
-        },
-        "type": [
-          "object"
-        ]
+        "$ref": "/schemata/resource_req"
       }
     },
     {
@@ -43,11 +39,7 @@
       "href": "/providers/{(%2Fschemata%2Fprovider%23%2Fdefinitions%2Fidentity)}/resources",
       "rel": "update",
       "schema": {
-        "properties": {
-        },
-        "type": [
-          "object"
-        ]
+        "$ref": "/schemata/resource"
       }
     }
   ]

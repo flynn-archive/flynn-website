@@ -20,11 +20,15 @@
       "href": "/apps/{(%2Fschemata%2Fapp%23%2Fdefinitions%2Fidentity)}/release",
       "rel": "self",
       "schema": {
-        "properties": {
-        },
+        "description": "",
         "type": [
           "object"
-        ]
+        ],
+        "properties": {
+          "release": {
+            "$ref": "/schemata/release#/definitions/identity"
+          }
+        }
       }
     }
   ]

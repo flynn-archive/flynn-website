@@ -13,11 +13,7 @@
       "href": "/apps/{(%2Fschemata%2Fapp%23%2Fdefinitions%2Fidentity)}/jobs",
       "rel": "create",
       "schema": {
-        "properties": {
-        },
-        "type": [
-          "object"
-        ]
+        "$ref": "/schemata/new_job"
       }
     },
     {
@@ -34,11 +30,7 @@
       "href": "/apps/{(%2Fschemata%2Fapp%23%2Fdefinitions%2Fidentity)}/jobs/{(%2Fschemata%2Fjob%23%2Fdefinitions%2Fidentity)}",
       "rel": "update",
       "schema": {
-        "properties": {
-        },
-        "type": [
-          "object"
-        ]
+        "$ref": "/schemata/job"
       }
     },
     {
@@ -53,7 +45,13 @@
       "description": "FIXME",
       "method": "GET",
       "href": "/apps/{(%2Fschemata%2Fapp%23%2Fdefinitions%2Fidentity)}/jobs/{(%2Fschemata%2Fjob%23%2Fdefinitions%2Fidentity)}/log",
-      "rel": "self"
+      "rel": "self",
+      "query": {
+        "tail": {
+          "description": "Tail the Job's log",
+          "type": ["string"]
+        }
+      }
     }
   ]
 }
