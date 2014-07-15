@@ -2,6 +2,7 @@
 title: Docs - Flynn
 layout: docs
 ---
+
 ## App Formation
 FIXME
 
@@ -88,6 +89,8 @@ PUT /apps/{app_id}/formations/{release_id}
 #### Curl Example
 ```bash
 $ curl -n -X PUT https://flynn.dev/apps/$APP_ID/formations/$RELEASE_ID
+-H "Content-Type: application/json" \
+-d '{"app":"01234567-89ab-cdef-0123-456789abcdef","release":"01234567-89ab-cdef-0123-456789abcdef","processes":[{"web":4102}],"created_at":"2012-01-01T12:00:00Z","updated_at":"2012-01-01T12:00:00Z"}'
 ```
 
 
@@ -248,6 +251,8 @@ POST /apps/{app_id}/jobs
 #### Curl Example
 ```bash
 $ curl -n -X POST https://flynn.dev/apps/$APP_ID/jobs
+-H "Content-Type: application/json" \
+-d '{"release":"01234567-89ab-cdef-0123-456789abcdef","cmd":["bash","my_script"],"env":[{"TOAST":"hot_bread"}],"tty":true,"tty_columns":80,"tty_lines":24}'
 ```
 
 
@@ -318,6 +323,8 @@ PUT /apps/{app_id}/jobs/{job_id}
 #### Curl Example
 ```bash
 $ curl -n -X PUT https://flynn.dev/apps/$APP_ID/jobs/$JOB_ID
+-H "Content-Type: application/json" \
+-d '{"id":"01234567-89ab-cdef-0123-456789abcdef","app":"01234567-89ab-cdef-0123-456789abcdef","release":"01234567-89ab-cdef-0123-456789abcdef","type":"web","state":"started","cmd":["bash","my_script"],"created_at":"2012-01-01T12:00:00Z","updated_at":"2012-01-01T12:00:00Z"}'
 ```
 
 
@@ -437,7 +444,7 @@ FIXME
     <td><strong>env</strong></td>
     <td><em>object</em></td>
     <td>ENV variables for this release</td>
-    <td><code>{"BREAD":"with butter"}</code></td>
+    <td><code>{"TOAST":"hot_bread"}</code></td>
   </tr>
   <tr>
     <td><strong>id</strong></td>
@@ -479,7 +486,7 @@ HTTP/1.1 200 OK
     "artifact": "01234567-89ab-cdef-0123-456789abcdef",
     "env": [
       {
-        "BREAD": "with butter"
+        "TOAST": "hot_bread"
       }
     ],
     "processes": {
@@ -498,10 +505,28 @@ FIXME
 PUT /apps/{app_id}/release
 ```
 
+#### Optional Parameters
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Description</th>
+    <th>Example</th>
+  </tr>
+  <tr>
+    <td><strong>release</strong></td>
+    <td><em>uuid</em></td>
+    <td>unique identifier of release</td>
+    <td><code>"01234567-89ab-cdef-0123-456789abcdef"</code></td>
+  </tr>
+</table>
+
 
 #### Curl Example
 ```bash
 $ curl -n -X PUT https://flynn.dev/apps/$APP_ID/release
+-H "Content-Type: application/json" \
+-d '{"release":"01234567-89ab-cdef-0123-456789abcdef"}'
 ```
 
 
@@ -516,7 +541,7 @@ HTTP/1.1 200 OK
   "artifact": "01234567-89ab-cdef-0123-456789abcdef",
   "env": [
     {
-      "BREAD": "with butter"
+      "TOAST": "hot_bread"
     }
   ],
   "processes": {
@@ -555,7 +580,7 @@ FIXME
     <td><strong>env</strong></td>
     <td><em>object</em></td>
     <td>ENV variables for this release</td>
-    <td><code>{"BREAD":"with butter"}</code></td>
+    <td><code>{"TOAST":"hot_bread"}</code></td>
   </tr>
   <tr>
     <td><strong>external_id</strong></td>
@@ -607,7 +632,7 @@ HTTP/1.1 200 OK
     ],
     "env": [
       {
-        "BREAD": "with butter"
+        "TOAST": "hot_bread"
       }
     ]
   }
@@ -626,6 +651,42 @@ FIXME
     <th>Description</th>
     <th>Example</th>
   </tr>
+  <tr>
+    <td><strong>config</strong></td>
+    <td><em>string</em></td>
+    <td>raw json message</td>
+    <td><code>"{ \"stuff\": \"more stuff\" }"</code></td>
+  </tr>
+  <tr>
+    <td><strong>created_at</strong></td>
+    <td><em>date-time</em></td>
+    <td>when route was created</td>
+    <td><code>"2012-01-01T12:00:00Z"</code></td>
+  </tr>
+  <tr>
+    <td><strong>id</strong></td>
+    <td><em>uuid</em></td>
+    <td>unique identifier of route</td>
+    <td><code>"01234567-89ab-cdef-0123-456789abcdef"</code></td>
+  </tr>
+  <tr>
+    <td><strong>parent_ref</strong></td>
+    <td><em>uuid</em></td>
+    <td>unique identifier for parent</td>
+    <td><code>"01234567-89ab-cdef-0123-456789abcdef"</code></td>
+  </tr>
+  <tr>
+    <td><strong>type</strong></td>
+    <td><em>string</em></td>
+    <td>the type of route</td>
+    <td><code>"web"</code></td>
+  </tr>
+  <tr>
+    <td><strong>updated_at</strong></td>
+    <td><em>date-time</em></td>
+    <td>when route was updated</td>
+    <td><code>"2012-01-01T12:00:00Z"</code></td>
+  </tr>
 </table>
 
 ### App Route Create
@@ -639,6 +700,8 @@ POST /apps/{app_id}/routes
 #### Curl Example
 ```bash
 $ curl -n -X POST https://flynn.dev/apps/$APP_ID/routes
+-H "Content-Type: application/json" \
+-d '{"id":"01234567-89ab-cdef-0123-456789abcdef","parent_ref":"01234567-89ab-cdef-0123-456789abcdef","type":"web","config":"{ \"stuff\": \"more stuff\" }","created_at":"2012-01-01T12:00:00Z","updated_at":"2012-01-01T12:00:00Z"}'
 ```
 
 
@@ -648,6 +711,12 @@ HTTP/1.1 201 Created
 ```
 ```
 {
+  "id": "01234567-89ab-cdef-0123-456789abcdef",
+  "parent_ref": "01234567-89ab-cdef-0123-456789abcdef",
+  "type": "web",
+  "config": "{ \"stuff\": \"more stuff\" }",
+  "created_at": "2012-01-01T12:00:00Z",
+  "updated_at": "2012-01-01T12:00:00Z"
 }
 ```
 
@@ -672,6 +741,12 @@ HTTP/1.1 200 OK
 ```
 [
   {
+    "id": "01234567-89ab-cdef-0123-456789abcdef",
+    "parent_ref": "01234567-89ab-cdef-0123-456789abcdef",
+    "type": "web",
+    "config": "{ \"stuff\": \"more stuff\" }",
+    "created_at": "2012-01-01T12:00:00Z",
+    "updated_at": "2012-01-01T12:00:00Z"
   }
 ]
 ```
@@ -696,6 +771,12 @@ HTTP/1.1 200 OK
 ```
 ```
 {
+  "id": "01234567-89ab-cdef-0123-456789abcdef",
+  "parent_ref": "01234567-89ab-cdef-0123-456789abcdef",
+  "type": "web",
+  "config": "{ \"stuff\": \"more stuff\" }",
+  "created_at": "2012-01-01T12:00:00Z",
+  "updated_at": "2012-01-01T12:00:00Z"
 }
 ```
 
@@ -719,6 +800,12 @@ HTTP/1.1 200 OK
 ```
 ```
 {
+  "id": "01234567-89ab-cdef-0123-456789abcdef",
+  "parent_ref": "01234567-89ab-cdef-0123-456789abcdef",
+  "type": "web",
+  "config": "{ \"stuff\": \"more stuff\" }",
+  "created_at": "2012-01-01T12:00:00Z",
+  "updated_at": "2012-01-01T12:00:00Z"
 }
 ```
 
@@ -750,7 +837,7 @@ FIXME
     <td><strong>env</strong></td>
     <td><em>object</em></td>
     <td>ENV variables for this release</td>
-    <td><code>{"BREAD":"with butter"}</code></td>
+    <td><code>{"TOAST":"hot_bread"}</code></td>
   </tr>
   <tr>
     <td><strong>external_id</strong></td>
@@ -783,6 +870,8 @@ POST /providers/{provider_id}/resources
 #### Curl Example
 ```bash
 $ curl -n -X POST https://flynn.dev/providers/$PROVIDER_ID/resources
+-H "Content-Type: application/json" \
+-d '{"apps":["01234567-89ab-cdef-0123-456789abcdef"],"config":"{ \"stuff\": \"more stuff\" }"}'
 ```
 
 
@@ -801,7 +890,7 @@ HTTP/1.1 201 Created
   ],
   "env": [
     {
-      "BREAD": "with butter"
+      "TOAST": "hot_bread"
     }
   ]
 }
@@ -836,7 +925,7 @@ HTTP/1.1 200 OK
   ],
   "env": [
     {
-      "BREAD": "with butter"
+      "TOAST": "hot_bread"
     }
   ]
 }
@@ -872,7 +961,7 @@ HTTP/1.1 200 OK
     ],
     "env": [
       {
-        "BREAD": "with butter"
+        "TOAST": "hot_bread"
       }
     ]
   }
@@ -890,6 +979,8 @@ PUT /providers/{provider_id}/resources
 #### Curl Example
 ```bash
 $ curl -n -X PUT https://flynn.dev/providers/$PROVIDER_ID/resources
+-H "Content-Type: application/json" \
+-d '{"id":"01234567-89ab-cdef-0123-456789abcdef","provider_id":"01234567-89ab-cdef-0123-456789abcdef","external_id":"01234567-89ab-cdef-0123-456789abcdef","created_at":"2012-01-01T12:00:00Z","apps":["01234567-89ab-cdef-0123-456789abcdef"],"env":[{"TOAST":"hot_bread"}]}'
 ```
 
 
@@ -908,11 +999,13 @@ HTTP/1.1 200 OK
   ],
   "env": [
     {
-      "BREAD": "with butter"
+      "TOAST": "hot_bread"
     }
   ]
 }
 ```
+
+
 
 
 
