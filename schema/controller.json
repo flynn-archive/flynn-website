@@ -1,0 +1,1032 @@
+{
+  "$schema": "http://json-schema.org/draft-04/hyper-schema",
+  "definitions": {
+    "app_formation": {
+      "$schema": "http://json-schema.org/draft-04/hyper-schema",
+      "title": "App Formation",
+      "description": "FIXME",
+      "$ref": "#/definitions/formation",
+      "type": [
+        "object"
+      ],
+      "links": [
+        {
+          "title": "Get",
+          "description": "FIXME",
+          "method": "GET",
+          "href": "/apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/formations/{(%23%2Fdefinitions%2Frelease%2Fdefinitions%2Fidentity)}",
+          "rel": "self"
+        },
+        {
+          "title": "Update",
+          "description": "FIXME",
+          "method": "PUT",
+          "href": "/apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/formations/{(%23%2Fdefinitions%2Frelease%2Fdefinitions%2Fidentity)}",
+          "rel": "update",
+          "schema": {
+            "$ref": "#/definitions/formation"
+          }
+        },
+        {
+          "title": "Delete",
+          "description": "FIXME",
+          "method": "DELETE",
+          "href": "/apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/formations/{(%23%2Fdefinitions%2Frelease%2Fdefinitions%2Fidentity)}",
+          "rel": "destroy"
+        },
+        {
+          "title": "List",
+          "description": "FIXME",
+          "method": "GET",
+          "href": "/apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/formations",
+          "rel": "instances"
+        }
+      ]
+    },
+    "app_job": {
+      "$schema": "http://json-schema.org/draft-04/hyper-schema",
+      "title": "App Job",
+      "description": "FIXME",
+      "$ref": "#/definitions/job",
+      "type": [
+        "object"
+      ],
+      "links": [
+        {
+          "title": "Create",
+          "description": "FIXME",
+          "method": "POST",
+          "href": "/apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/jobs",
+          "rel": "create",
+          "schema": {
+            "$ref": "#/definitions/new_job"
+          }
+        },
+        {
+          "title": "Jobs List",
+          "description": "FIXME",
+          "method": "GET",
+          "href": "/apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/jobs",
+          "rel": "instances"
+        },
+        {
+          "title": "Update",
+          "description": "FIXME",
+          "method": "PUT",
+          "href": "/apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/jobs/{(%23%2Fdefinitions%2Fjob%2Fdefinitions%2Fidentity)}",
+          "rel": "update",
+          "schema": {
+            "$ref": "#/definitions/job"
+          }
+        },
+        {
+          "title": "Delete",
+          "description": "FIXME",
+          "method": "DELETE",
+          "href": "/apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/jobs/{(%23%2Fdefinitions%2Fjob%2Fdefinitions%2Fidentity)}",
+          "rel": "destroy"
+        },
+        {
+          "title": "Logs",
+          "description": "FIXME",
+          "method": "GET",
+          "href": "/apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/jobs/{(%23%2Fdefinitions%2Fjob%2Fdefinitions%2Fidentity)}/log",
+          "rel": "self",
+          "query": {
+            "tail": {
+              "description": "Tail the Job's log",
+              "type": [
+                "string"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "app_release": {
+      "$schema": "http://json-schema.org/draft-04/hyper-schema",
+      "title": "App Release",
+      "description": "FIXME",
+      "$ref": "#/definitions/release",
+      "type": [
+        "object"
+      ],
+      "links": [
+        {
+          "title": "List",
+          "description": "FIXME",
+          "method": "GET",
+          "href": "/apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/release",
+          "rel": "instances"
+        },
+        {
+          "title": "Update",
+          "description": "FIXME",
+          "method": "PUT",
+          "href": "/apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/release",
+          "rel": "self",
+          "schema": {
+            "description": "",
+            "type": [
+              "object"
+            ],
+            "properties": {
+              "release": {
+                "$ref": "#/definitions/release/definitions/identity"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "app_resource": {
+      "$schema": "http://json-schema.org/draft-04/hyper-schema",
+      "title": "App Resource",
+      "description": "FIXME",
+      "$ref": "#/definitions/resource",
+      "type": [
+        "object"
+      ],
+      "links": [
+        {
+          "title": "List",
+          "description": "FIXME",
+          "method": "GET",
+          "href": "/apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/resources",
+          "rel": "instances"
+        }
+      ]
+    },
+    "app_route": {
+      "$schema": "http://json-schema.org/draft-04/hyper-schema",
+      "title": "App Route",
+      "description": "FIXME",
+      "$ref": "#/definitions/route",
+      "type": [
+        "object"
+      ],
+      "links": [
+        {
+          "title": "Create",
+          "description": "FIXME",
+          "method": "POST",
+          "href": "/apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/routes",
+          "rel": "create",
+          "schema": {
+            "$ref": "#/definitions/route"
+          }
+        },
+        {
+          "title": "List",
+          "description": "FIXME",
+          "method": "GET",
+          "href": "/apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/routes",
+          "rel": "instances"
+        },
+        {
+          "title": "Get",
+          "description": "FIXME",
+          "method": "GET",
+          "href": "/apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/routes/{(%23%2Fdefinitions%2Froute%2Fdefinitions%2Ftype)}/{(%23%2Fdefinitions%2Froute%2Fdefinitions%2Fidentity)}",
+          "rel": "self"
+        },
+        {
+          "title": "Delete",
+          "description": "FIXME",
+          "method": "DELETE",
+          "href": "/apps/{(%23%2Fdefinitions%2Fapp%2Fdefinitions%2Fidentity)}/routes/{(%23%2Fdefinitions%2Froute%2Fdefinitions%2Ftype)}/{(%23%2Fdefinitions%2Froute%2Fdefinitions%2Fidentity)}",
+          "rel": "destroy"
+        }
+      ]
+    },
+    "provider_resource": {
+      "$schema": "http://json-schema.org/draft-04/hyper-schema",
+      "title": "Provider Resource",
+      "description": "FIXME",
+      "$ref": "#/definitions/resource",
+      "type": [
+        "object"
+      ],
+      "links": [
+        {
+          "title": "Create",
+          "description": "FIXME",
+          "href": "/providers/{(%23%2Fdefinitions%2Fprovider%2Fdefinitions%2Fidentity)}/resources",
+          "method": "POST",
+          "rel": "create",
+          "schema": {
+            "$ref": "#/definitions/resource_req"
+          }
+        },
+        {
+          "title": "Info",
+          "description": "FIXME",
+          "href": "/providers/{(%23%2Fdefinitions%2Fprovider%2Fdefinitions%2Fidentity)}/resources/{(%23%2Fdefinitions%2Fresource%2Fdefinitions%2Fidentity)}",
+          "method": "GET",
+          "rel": "self"
+        },
+        {
+          "title": "List",
+          "description": "FIXME",
+          "href": "/providers/{(%23%2Fdefinitions%2Fprovider%2Fdefinitions%2Fidentity)}/resources",
+          "method": "GET",
+          "rel": "instances"
+        },
+        {
+          "title": "Update",
+          "description": "FIXME",
+          "method": "PUT",
+          "href": "/providers/{(%23%2Fdefinitions%2Fprovider%2Fdefinitions%2Fidentity)}/resources",
+          "rel": "update",
+          "schema": {
+            "$ref": "#/definitions/resource"
+          }
+        }
+      ]
+    },
+    "app": {
+      "$schema": "http://json-schema.org/draft-04/hyper-schema",
+      "title": "TYPE.App",
+      "description": "FIXME",
+      "definitions": {
+        "id": {
+          "description": "unique identifier of app",
+          "example": "01234567-89ab-cdef-0123-456789abcdef",
+          "format": "uuid",
+          "type": [
+            "string"
+          ]
+        },
+        "identity": {
+          "$ref": "#/definitions/app/definitions/id"
+        },
+        "created_at": {
+          "description": "when app was created",
+          "example": "2012-01-01T12:00:00Z",
+          "format": "date-time",
+          "type": [
+            "string"
+          ]
+        },
+        "updated_at": {
+          "description": "when app was updated",
+          "example": "2012-01-01T12:00:00Z",
+          "format": "date-time",
+          "type": [
+            "string"
+          ]
+        },
+        "name": {
+          "description": "name of app",
+          "example": "my-name-is",
+          "type": [
+            "string"
+          ]
+        },
+        "protected": {
+          "description": "is the app protected?",
+          "example": true,
+          "type": [
+            "boolean"
+          ]
+        },
+        "meta": {
+          "description": "app meta-data",
+          "example": {
+            "special": "data"
+          },
+          "type": [
+            "object"
+          ]
+        }
+      },
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/app/definitions/id"
+        },
+        "created_at": {
+          "$ref": "#/definitions/app/definitions/created_at"
+        },
+        "updated_at": {
+          "$ref": "#/definitions/app/definitions/updated_at"
+        },
+        "protected": {
+          "$ref": "#/definitions/app/definitions/protected"
+        },
+        "name": {
+          "$ref": "#/definitions/app/definitions/name"
+        },
+        "meta": {
+          "$ref": "#/definitions/app/definitions/meta"
+        }
+      },
+      "type": [
+        "object"
+      ],
+      "links": [
+      ]
+    },
+    "artifact": {
+      "$schema": "http://json-schema.org/draft-04/hyper-schema",
+      "title": "TYPE.Artifact",
+      "description": "FIXME",
+      "definitions": {
+        "id": {
+          "description": "unique identifier of artifact",
+          "example": "01234567-89ab-cdef-0123-456789abcdef",
+          "format": "uuid",
+          "type": [
+            "string"
+          ]
+        },
+        "identity": {
+          "$ref": "#/definitions/artifact/definitions/id"
+        }
+      },
+      "properties": {
+      },
+      "type": [
+        "object"
+      ],
+      "links": [
+      ]
+    },
+    "basic": {
+      "$schema": "http://json-schema.org/draft-04/hyper-schema",
+      "title": "Basic Types",
+      "description": "Common definitions are stored here",
+      "definitions": {
+        "id": {
+          "description": "unique identifier",
+          "example": "01234567-89ab-cdef-0123-456789abcdef",
+          "format": "uuid",
+          "type": [
+            "string"
+          ]
+        },
+        "identity": {
+          "$ref": "#/definitions/artifact/definitions/id"
+        },
+        "env": {
+          "description": "ENV variables for this release",
+          "example": [
+            {
+              "TOAST": "hot_bread"
+            }
+          ],
+          "type": [
+            "object"
+          ]
+        },
+        "cmd": {
+          "description": "Shell Command",
+          "example": [
+            "bash",
+            "my_script"
+          ],
+          "type": [
+            "array"
+          ]
+        },
+        "config": {
+          "description": "raw json message",
+          "example": "{ \"stuff\": \"more stuff\" }",
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "properties": {
+      },
+      "type": [
+        "object"
+      ],
+      "links": [
+      ]
+    },
+    "formation": {
+      "$schema": "http://json-schema.org/draft-04/hyper-schema",
+      "title": "TYPE.Formation",
+      "description": "FIXME",
+      "definitions": {
+        "identity": {
+          "description": "FIXME",
+          "example": "FIXME",
+          "type": [
+            "string"
+          ]
+        },
+        "created_at": {
+          "description": "when formation was created",
+          "example": "2012-01-01T12:00:00Z",
+          "format": "date-time",
+          "type": [
+            "string"
+          ]
+        },
+        "updated_at": {
+          "description": "when formation was updated",
+          "example": "2012-01-01T12:00:00Z",
+          "format": "date-time",
+          "type": [
+            "string"
+          ]
+        },
+        "processes": {
+          "description": "Process ID map",
+          "example": [
+            {
+              "web": 4102
+            }
+          ],
+          "type": [
+            "object"
+          ]
+        }
+      },
+      "properties": {
+        "app": {
+          "$ref": "#/definitions/app/definitions/identity"
+        },
+        "release": {
+          "$ref": "#/definitions/release/definitions/identity"
+        },
+        "processes": {
+          "$ref": "#/definitions/formation/definitions/processes"
+        },
+        "created_at": {
+          "$ref": "#/definitions/formation/definitions/created_at"
+        },
+        "updated_at": {
+          "$ref": "#/definitions/formation/definitions/updated_at"
+        }
+      },
+      "type": [
+        "object"
+      ],
+      "links": [
+      ]
+    },
+    "job": {
+      "$schema": "http://json-schema.org/draft-04/hyper-schema",
+      "title": "TYPE.Job",
+      "description": "FIXME",
+      "definitions": {
+        "id": {
+          "description": "unique identifier of job",
+          "example": "01234567-89ab-cdef-0123-456789abcdef",
+          "format": "uuid",
+          "type": [
+            "string"
+          ]
+        },
+        "identity": {
+          "$ref": "#/definitions/job/definitions/id"
+        },
+        "created_at": {
+          "description": "when job was created",
+          "example": "2012-01-01T12:00:00Z",
+          "format": "date-time",
+          "type": [
+            "string"
+          ]
+        },
+        "updated_at": {
+          "description": "when job was updated",
+          "example": "2012-01-01T12:00:00Z",
+          "format": "date-time",
+          "type": [
+            "string"
+          ]
+        },
+        "type": {
+          "description": "job type",
+          "example": "web",
+          "type": [
+            "string"
+          ]
+        },
+        "state": {
+          "description": "job state",
+          "example": "started",
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/job/definitions/identity"
+        },
+        "app": {
+          "$ref": "#/definitions/app/definitions/identity"
+        },
+        "release": {
+          "$ref": "#/definitions/release/definitions/identity"
+        },
+        "type": {
+          "$ref": "#/definitions/job/definitions/type"
+        },
+        "state": {
+          "$ref": "#/definitions/job/definitions/state"
+        },
+        "cmd": {
+          "$ref": "#/definitions/basic/definitions/cmd"
+        },
+        "created_at": {
+          "$ref": "#/definitions/formation/definitions/created_at"
+        },
+        "updated_at": {
+          "$ref": "#/definitions/formation/definitions/updated_at"
+        }
+      },
+      "type": [
+        "object"
+      ],
+      "links": [
+      ]
+    },
+    "new_job": {
+      "$schema": "http://json-schema.org/draft-04/hyper-schema",
+      "title": "TYPE.NewJob",
+      "description": "FIXME",
+      "definitions": {
+        "tty": {
+          "description": "initialize a tty session",
+          "example": true,
+          "type": [
+            "boolean"
+          ]
+        },
+        "tty_columns": {
+          "description": "number of columns in tty",
+          "example": 80,
+          "type": [
+            "number"
+          ]
+        },
+        "tty_lines": {
+          "description": "number of lines/rows in tty",
+          "example": 24,
+          "type": [
+            "number"
+          ]
+        }
+      },
+      "properties": {
+        "release": {
+          "$ref": "#/definitions/release/definitions/identity"
+        },
+        "cmd": {
+          "$ref": "#/definitions/basic/definitions/cmd"
+        },
+        "env": {
+          "$ref": "#/definitions/basic/definitions/env"
+        },
+        "tty": {
+          "$ref": "#/definitions/new_job/definitions/tty"
+        },
+        "tty_columns": {
+          "$ref": "#/definitions/new_job/definitions/tty_columns"
+        },
+        "tty_lines": {
+          "$ref": "#/definitions/new_job/definitions/tty_lines"
+        }
+      },
+      "type": [
+        "object"
+      ],
+      "links": [
+      ]
+    },
+    "process_port": {
+      "$schema": "http://json-schema.org/draft-04/hyper-schema",
+      "title": "TYPE.Process Type",
+      "description": "FIXME",
+      "definitions": {
+        "tcp": {
+          "description": "TCP port",
+          "example": 64223,
+          "type": [
+            "number"
+          ]
+        },
+        "udp": {
+          "description": "UDP",
+          "example": 7000,
+          "type": [
+            "number"
+          ]
+        }
+      },
+      "properties": {
+        "tcp": {
+          "$ref": "#/definitions/process_port/definitions/tcp"
+        },
+        "udp": {
+          "$ref": "#/definitions/process_port/definitions/udp"
+        }
+      },
+      "type": [
+        "object"
+      ],
+      "links": [
+      ]
+    },
+    "process_type": {
+      "$schema": "http://json-schema.org/draft-04/hyper-schema",
+      "title": "TYPE.Process Type",
+      "description": "FIXME",
+      "definitions": {
+        "data": {
+          "description": "ENV variables for this release",
+          "example": false,
+          "type": [
+            "boolean"
+          ]
+        }
+      },
+      "properties": {
+        "cmd": {
+          "$ref": "#/definitions/basic/definitions/cmd"
+        },
+        "env": {
+          "$ref": "#/definitions/basic/definitions/env"
+        },
+        "ports": {
+          "$ref": "#/definitions/process_port"
+        },
+        "data": {
+          "$ref": "#/definitions/process_type/definitions/data"
+        }
+      },
+      "type": [
+        "object"
+      ],
+      "links": [
+      ]
+    },
+    "provider": {
+      "$schema": "http://json-schema.org/draft-04/hyper-schema",
+      "title": "TYPE.Provider",
+      "description": "FIXME",
+      "definitions": {
+        "id": {
+          "description": "unique identifier of provider",
+          "example": "01234567-89ab-cdef-0123-456789abcdef",
+          "format": "uuid",
+          "type": [
+            "string"
+          ]
+        },
+        "identity": {
+          "$ref": "#/definitions/provider/definitions/id"
+        },
+        "created_at": {
+          "description": "when provider was created",
+          "example": "2012-01-01T12:00:00Z",
+          "format": "date-time",
+          "type": [
+            "string"
+          ]
+        },
+        "updated_at": {
+          "description": "when provider was updated",
+          "example": "2012-01-01T12:00:00Z",
+          "format": "date-time",
+          "type": [
+            "string"
+          ]
+        },
+        "name": {
+          "description": "name of provider",
+          "example": "my-name-is",
+          "type": [
+            "string"
+          ]
+        },
+        "url": {
+          "description": "url of provider",
+          "example": "FIXME",
+          "format": "uri",
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/provider/definitions/id"
+        },
+        "created_at": {
+          "$ref": "#/definitions/provider/definitions/created_at"
+        },
+        "updated_at": {
+          "$ref": "#/definitions/provider/definitions/updated_at"
+        },
+        "name": {
+          "$ref": "#/definitions/provider/definitions/name"
+        },
+        "url": {
+          "$ref": "#/definitions/provider/definitions/url"
+        }
+      },
+      "type": [
+        "object"
+      ],
+      "links": [
+      ]
+    },
+    "release": {
+      "$schema": "http://json-schema.org/draft-04/hyper-schema",
+      "title": "TYPE.Release",
+      "description": "FIXME",
+      "definitions": {
+        "id": {
+          "description": "unique identifier of release",
+          "example": "01234567-89ab-cdef-0123-456789abcdef",
+          "format": "uuid",
+          "type": [
+            "string"
+          ]
+        },
+        "identity": {
+          "$ref": "#/definitions/release/definitions/id"
+        },
+        "created_at": {
+          "description": "when app was created",
+          "example": "2012-01-01T12:00:00Z",
+          "format": "date-time",
+          "type": [
+            "string"
+          ]
+        },
+        "processes": {
+          "description": "FIXME",
+          "example": {
+            "web": {
+              "$ref": "#/definitions/process_type"
+            }
+          },
+          "type": [
+            "object"
+          ]
+        }
+      },
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/release/definitions/identity"
+        },
+        "created_at": {
+          "$ref": "#/definitions/release/definitions/created_at"
+        },
+        "artifact": {
+          "$ref": "#/definitions/artifact/definitions/identity"
+        },
+        "env": {
+          "$ref": "#/definitions/basic/definitions/env"
+        },
+        "processes": {
+          "$ref": "#/definitions/release/definitions/processes"
+        }
+      },
+      "type": [
+        "object"
+      ],
+      "links": [
+      ]
+    },
+    "resource": {
+      "$schema": "http://json-schema.org/draft-04/hyper-schema",
+      "title": "TYPE.Resource",
+      "description": "FIXME",
+      "definitions": {
+        "id": {
+          "description": "unique identifier of resource",
+          "example": "01234567-89ab-cdef-0123-456789abcdef",
+          "format": "uuid",
+          "type": [
+            "string"
+          ]
+        },
+        "identity": {
+          "$ref": "#/definitions/artifact/definitions/id"
+        },
+        "created_at": {
+          "description": "when resource was created",
+          "example": "2012-01-01T12:00:00Z",
+          "format": "date-time",
+          "type": [
+            "string"
+          ]
+        },
+        "apps": {
+          "description": "app ids",
+          "example": [
+            "01234567-89ab-cdef-0123-456789abcdef"
+          ],
+          "type": [
+            "array"
+          ]
+        },
+        "external_id": {
+          "description": "unique identifier of resource",
+          "example": "01234567-89ab-cdef-0123-456789abcdef",
+          "format": "uuid",
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/resource/definitions/identity"
+        },
+        "provider_id": {
+          "$ref": "#/definitions/provider/definitions/identity"
+        },
+        "external_id": {
+          "$ref": "#/definitions/resource/definitions/external_id"
+        },
+        "created_at": {
+          "$ref": "#/definitions/resource/definitions/created_at"
+        },
+        "apps": {
+          "$ref": "#/definitions/resource/definitions/apps"
+        },
+        "env": {
+          "$ref": "#/definitions/basic/definitions/env"
+        }
+      },
+      "type": [
+        "object"
+      ],
+      "links": [
+      ]
+    },
+    "resource_req": {
+      "$schema": "http://json-schema.org/draft-04/hyper-schema",
+      "title": "TYPE.ResourceReq",
+      "description": "FIXME",
+      "definitions": {
+      },
+      "properties": {
+        "apps": {
+          "$ref": "#/definitions/resource/definitions/apps"
+        },
+        "config": {
+          "$ref": "#/definitions/basic/definitions/config"
+        }
+      },
+      "type": [
+        "object"
+      ],
+      "links": [
+      ]
+    },
+    "route": {
+      "$schema": "http://json-schema.org/draft-04/hyper-schema",
+      "title": "TYPE.Route",
+      "description": "FIXME",
+      "definitions": {
+        "id": {
+          "description": "unique identifier of route",
+          "example": "01234567-89ab-cdef-0123-456789abcdef",
+          "format": "uuid",
+          "type": [
+            "string"
+          ]
+        },
+        "identity": {
+          "$ref": "#/definitions/route/definitions/id"
+        },
+        "created_at": {
+          "description": "when route was created",
+          "example": "2012-01-01T12:00:00Z",
+          "format": "date-time",
+          "type": [
+            "string"
+          ]
+        },
+        "updated_at": {
+          "description": "when route was updated",
+          "example": "2012-01-01T12:00:00Z",
+          "format": "date-time",
+          "type": [
+            "string"
+          ]
+        },
+        "type": {
+          "description": "the type of route",
+          "example": "web",
+          "type": [
+            "string"
+          ]
+        },
+        "parent_ref": {
+          "description": "unique identifier for parent",
+          "example": "01234567-89ab-cdef-0123-456789abcdef",
+          "format": "uuid",
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/route/definitions/identity"
+        },
+        "parent_ref": {
+          "$ref": "#/definitions/route/definitions/parent_ref"
+        },
+        "type": {
+          "$ref": "#/definitions/route/definitions/type"
+        },
+        "config": {
+          "$ref": "#/definitions/basic/definitions/config"
+        },
+        "created_at": {
+          "$ref": "#/definitions/route/definitions/created_at"
+        },
+        "updated_at": {
+          "$ref": "#/definitions/route/definitions/updated_at"
+        }
+      },
+      "type": [
+        "object"
+      ],
+      "links": [
+      ]
+    }
+  },
+  "properties": {
+    "app_formation": {
+      "$ref": "#/definitions/app_formation"
+    },
+    "app_job": {
+      "$ref": "#/definitions/app_job"
+    },
+    "app_release": {
+      "$ref": "#/definitions/app_release"
+    },
+    "app_resource": {
+      "$ref": "#/definitions/app_resource"
+    },
+    "app_route": {
+      "$ref": "#/definitions/app_route"
+    },
+    "provider_resource": {
+      "$ref": "#/definitions/provider_resource"
+    },
+    "app": {
+      "$ref": "#/definitions/app"
+    },
+    "artifact": {
+      "$ref": "#/definitions/artifact"
+    },
+    "basic": {
+      "$ref": "#/definitions/basic"
+    },
+    "formation": {
+      "$ref": "#/definitions/formation"
+    },
+    "job": {
+      "$ref": "#/definitions/job"
+    },
+    "new_job": {
+      "$ref": "#/definitions/new_job"
+    },
+    "process_port": {
+      "$ref": "#/definitions/process_port"
+    },
+    "process_type": {
+      "$ref": "#/definitions/process_type"
+    },
+    "provider": {
+      "$ref": "#/definitions/provider"
+    },
+    "release": {
+      "$ref": "#/definitions/release"
+    },
+    "resource": {
+      "$ref": "#/definitions/resource"
+    },
+    "resource_req": {
+      "$ref": "#/definitions/resource_req"
+    },
+    "route": {
+      "$ref": "#/definitions/route"
+    }
+  },
+  "type": [
+    "object"
+  ],
+  "title": "Flynn Controller",
+  "links": [
+    {
+      "href": "https://flynn.dev",
+      "rel": "self"
+    }
+  ],
+  "description": "Flynn Controller Routes"
+}

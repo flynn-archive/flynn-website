@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-04/hyper-schema",
+  "title": "TYPE.Artifact",
+  "description": "FIXME",
+  "id": "schemata/artifact",
+  "definitions": {
+    "id": {
+      "description": "unique identifier of artifact",
+      "example": "01234567-89ab-cdef-0123-456789abcdef",
+      "format": "uuid",
+      "type": [
+        "string"
+      ]
+    },
+    "identity": {
+      "$ref": "/schemata/artifact#/definitions/id"
+    }
+  },
+  "properties": {},
+  "type": ["object"],
+  "links": []
+}

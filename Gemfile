@@ -4,6 +4,9 @@ gem "middleman", "~>3.1.3"
 gem "middleman-more"
 gem "middleman-blog"
 
+gem "prmd", :git => "git://github.com/interagent/prmd.git", :branch => "master",
+            :ref => "d3aa5d8451249e3a939611a8aa4c3dfb4f8d8971"
+
 gem "unicorn"
 gem "builder"
 

@@ -1,0 +1,8 @@
+{
+  "title": "Flynn Controller",
+  "links": [{
+    "href": "https://flynn.dev",
+    "rel": "self"
+  }],
+  "description": "Flynn Controller Routes"
+}

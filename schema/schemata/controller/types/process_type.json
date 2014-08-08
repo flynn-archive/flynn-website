@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-04/hyper-schema",
+  "title": "TYPE.Process Type",
+  "description": "FIXME",
+  "id": "schemata/process_type",
+  "definitions": {
+    "data": {
+      "description": "ENV variables for this release",
+      "example": false,
+      "type": [
+        "boolean"
+      ]
+    }
+  },
+  "properties": {
+    "cmd": {
+      "$ref": "/schemata/basic#/definitions/cmd"
+    },
+    "env": {
+      "$ref": "/schemata/basic#/definitions/env"
+    },
+    "ports": {
+      "$ref": "/schemata/process_port"
+    },
+    "data": {
+      "$ref": "/schemata/process_type#/definitions/data"
+    }
+  },
+  "type": [
+    "object"
+  ],
+  "links": []
+}
